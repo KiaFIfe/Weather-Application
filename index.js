@@ -81,6 +81,7 @@ function showFahrenheit(event) {
   let mainFahrenheit = document.querySelector("#temperature");
   let fahrenheitConversion = (celsiusTemp * 9) / 5 + 32;
   mainFahrenheit.innerHTML = Math.round(fahrenheitConversion) + "°";
+
 }
 function searchPosition(position) {
   let apiKey = "f49ee1e2561369c11af5b8f8810cf134";
