@@ -18,16 +18,15 @@ h1 {
   text-transform: capitalize;
   padding-bottom: 30px;
 }
- 
-.list{
+
+.list {
   padding-top: 70px;
   list-style: none;
-
 }
-.icon{
+.icon {
   padding-left: 105px;
 }
-.description{
+.description {
   text-transform: capitalize;
 }
 .container {
@@ -45,7 +44,7 @@ h1 {
 }
 .candfButton,
 .submitSearch,
-.current-button {
+.currentButton {
   background-color: #fcd53f;
   border: none;
   padding: 9.5px;
@@ -57,11 +56,11 @@ h1 {
   color: #5a6275;
   font-weight: 600;
 }
-.active{
-  cursor:default;
+.active {
+  cursor: default;
   color: #5a6275;
 }
-.candf{
+.candf {
   text-decoration: none;
 }
 .search {
