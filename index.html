@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather update</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container border">
+      <div class="searchCity">
+        <form id="weather-form">
+          <input
+            id="search"
+            class="search"
+            type="text"
+            placeholder="Search for any city in the world..."
+          />
+          <input
+            type="submit"
+            value="Search"
+            class="submitSearch"
+            id="submit-search"
+          />
+        </form>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-6">
+          <h1 id="place"></h1>
+          <br />
+          <h2 class="temperature" id="temperature"></h2>
+          <p class="sunEmoji">⛅</p>
+
+          <h3 class="time" id="time"></h3>
+          <h3 class="date" id="date"></h3>
+        </div>
+        <div class="col-6">
+          <ul class="list">
+            <li>Humidity: <span id="humid"></span></li>
+            <li>wind: <span id="wind"></span></li>
+            <li class="description">
+              Description: <span id="description"></span>
+            </li>
+          </ul>
+        </div>
+
+        <button class="candfButton">
+          <span
+            ><a href="#" class="active candf" id="celsius">C°</a>
+            /
+            <a href="#" class="candf" id="fahrenheit">F°</a>
+          </span>
+        </button>
+        <button class="current-button" id="current-button">My location</button>
+      </div>
+    </div>
+    <p>
+      <a href="https://github.com/KiaFIfe/Weather-Application" target="_blank"
+        >Open-Source code</a
+      >
+      by Likia Fife
+    </p>
+    <script src="index.js"></script>
+  </body>
+</html>
