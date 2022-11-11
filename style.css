@@ -16,12 +16,8 @@ h1 {
   font-size: 50px;
   text-transform: capitalize;
 }
-li {
   list-style: none;
-  padding: 10px;
 }
-.list{
-  padding-top: 150px;
 }
 .description{
   text-transform: capitalize;
