@@ -83,8 +83,4 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showCelsius);
 let formSelector = document.querySelector("#weather-form");
 formSelector.addEventListener("submit", submitCity);
-
 searchCity("paris");
-
-// make current loaction button Work
-//  link the pictures
