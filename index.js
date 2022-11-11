@@ -53,7 +53,13 @@ function weatherCitySearch(response) {
     Math.round(response.data.wind.speed) + "km/h");
   let description = (document.querySelector("#description").innerHTML =
     response.data.weather[0].description);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+
 function searchCity(city) {
   let cityName = "new york";
   let apiKey = "f49ee1e2561369c11af5b8f8810cf134";
