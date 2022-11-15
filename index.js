@@ -53,13 +53,13 @@ function weatherCitySearch(response) {
     Math.round(response.data.wind.speed) + "km/h");
   let description = (document.querySelector("#description").innerHTML =
     response.data.weather[0].description);
-    let iconElement = document.querySelector("#icon");
-    iconElement.setAttribute(
-      "src",
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-      );
-    }
-    
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+}
+
 function searchCity(city) {
   let apiKey = "f49ee1e2561369c11af5b8f8810cf134";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -93,7 +93,33 @@ function findcurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
-let apiKey = "f49ee1e2561369c11af5b8f8810cf134";
+function weatherForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHtml = `<div class="row">`;
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `        
+     <div class="col-1">
+        <div class="day">${day}</div>
+        <img
+          src="https://openweathermap.org/img/wn/01d.png"
+          alt="Weather icon"
+          class="forecast-icon"
+        />
+        <div class="forecast-temps">
+          <span class="temp1" id="temp1">12</span>
+          <span class="temp2" id="temp2">10</span>
+        </div>
+     </div>
+        `;
+      });
+    forecastHtml = forecastHtml + `</div>`;
+    forecastElement.innerHTML = forecastHtml;
+  }
+ 
+  let apiKey = "f49ee1e2561369c11af5b8f8810cf134";
 let currentLink = document.querySelector("#currentLink");
 currentLink.addEventListener("click", findcurrentLocation);
 let celsiusTemp = null;
@@ -104,3 +130,4 @@ celsius.addEventListener("click", showCelsius);
 let formSelector = document.querySelector("#weather-form");
 formSelector.addEventListener("submit", submitCity);
 searchCity("paris");
+weatherForecast();

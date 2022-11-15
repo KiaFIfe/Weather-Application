@@ -18,7 +18,10 @@ h1 {
   text-transform: capitalize;
   padding-bottom: 20px;
 }
-
+li {
+  list-style: none;
+  text-align: left;
+}
 .list {
   padding-top: 50px;
   padding-left: 80px;
@@ -46,7 +49,7 @@ h1 {
 .searchCity {
   margin-left: 65px;
 }
-.submitSearch{
+.submitSearch {
   background-color: #eac83e;
   border: none;
   padding: 9.5px;
@@ -58,7 +61,7 @@ h1 {
   color: #5a6275;
   font-weight: 600;
 }
-.current-link{
+.current-link {
   display: block;
   margin-top: 10px;
   text-decoration: none;
@@ -96,9 +99,12 @@ h1 {
 .temp-con {
   text-decoration: none;
   display: inline-block;
-  font-weight:500;
+  font-weight: 500;
 }
-li {
-  list-style: none;
-  text-align: left;
+.day{
+  text-align: center;
+}
+.temp1{
+  font-weight: 600;
+  padding-left: 10px;
 }
