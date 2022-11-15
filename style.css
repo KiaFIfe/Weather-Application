@@ -14,17 +14,21 @@ ul {
 h1 {
   font-weight: 700;
   margin-top: 17px;
-  font-size: 50px;
+  font-size: 80px;
   text-transform: capitalize;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .list {
-  padding-top: 70px;
+  padding-top: 50px;
+  padding-left: 80px;
   list-style: none;
+  line-height: 35px;
+  font-weight: 400;
 }
 .icon {
   padding-left: 105px;
+  display: block;
 }
 .description {
   text-transform: capitalize;
@@ -42,10 +46,8 @@ h1 {
 .searchCity {
   margin-left: 65px;
 }
-.candfButton,
-.submitSearch,
-.currentButton {
-  background-color: #fcd53f;
+.submitSearch{
+  background-color: #eac83e;
   border: none;
   padding: 9.5px;
   border-radius: 5px;
@@ -56,12 +58,17 @@ h1 {
   color: #5a6275;
   font-weight: 600;
 }
+.current-link{
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #9d8936;
+  font-weight: 600;
+  padding-left: 30px;
+}
 .active {
   cursor: default;
   color: #5a6275;
-}
-.candf {
-  text-decoration: none;
 }
 .search {
   margin: 0 auto;
@@ -83,4 +90,15 @@ h1 {
 }
 .temperature {
   font-size: 45px;
+  display: inline-block;
+  margin-left: 100px;
+}
+.temp-con {
+  text-decoration: none;
+  display: inline-block;
+  font-weight:500;
+}
+li {
+  list-style: none;
+  text-align: left;
 }

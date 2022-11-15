@@ -40,10 +40,17 @@
       <div class="row">
         <div class="col"><h1 id="place"></h1></div>
       </div>
+
       <div class="row">
         <div class="col-6">
           <br />
           <h2 class="temperature" id="temperature"></h2>
+
+          <a href="#" class="active temp-con" id="celsius">C°</a>
+
+          /
+          <a href="#" class="temp-con" id="fahrenheit">F°</a>
+
           <img
             src="https://openweathermap.org/img/wn/01d.png"
             alt="Weather icon"
@@ -57,21 +64,15 @@
         <div class="col-6">
           <ul class="list">
             <li>Humidity: <span id="humid"></span></li>
-            <li>wind: <span id="wind"></span></li>
+            <li>Wind: <span id="wind"></span></li>
             <li class="description">
               Description: <span id="description"></span>
+              <a href="#" class="current-link" id="currentLink"
+                >Current location</a
+              >
             </li>
           </ul>
         </div>
-
-        <button class="candfButton">
-          <span
-            ><a href="#" class="active candf" id="celsius">C°</a>
-            /
-            <a href="#" class="candf" id="fahrenheit">F°</a>
-          </span>
-        </button>
-        <button class="currentButton" id="current-button">My location</button>
       </div>
     </div>
     <p>
