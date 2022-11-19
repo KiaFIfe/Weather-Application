@@ -43,7 +43,6 @@ dateSelect.innerHTML = `${dayDisplay} ${timeDate.getDate()} ${MonthDisplay} ${ti
 
 function getWeekForecast(coordinates) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
-  console.log(apiUrl)
   axios.get(apiUrl).then(weatherForecast);
 }
 function weatherCitySearch(response) {
@@ -98,26 +97,43 @@ function findcurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
+function displayDay(weekday) {
+  let date = new Date(weekday * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+
+  return days[day];
+}
 function weatherForecast(response) {
+  let forecastData = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHtml = `<div class="row">`;
-  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
+  forecastData.forEach(function (forecastDay) {
     forecastHtml =
       forecastHtml +
       `        
      <div class="col-1">
-        <div class="day">${day}</div>
+      
+        <div class = "temp-border">
+        <div class="day">${displayDay(forecastDay.time)}</div>
         <img
-          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+            forecastDay.condition.icon
+          }.png"
           alt="Weather icon"
           class="forecast-icon"
         />
         <div class="forecast-temps">
-          <span class="temp1" id="temp1">12</span>
-          <span class="temp2" id="temp2">10</span>
+          <span class="temp1" id="temp1">${
+            Math.round(forecastDay.temperature.maximum) + "°"
+          }</span>
+          <span class="temp2" id="temp2">${
+            Math.round(forecastDay.temperature.minimum) + "°"
+          }</span>
         </div>
      </div>
+     </div>
+
         `;
   });
   forecastHtml = forecastHtml + `</div>`;
@@ -135,4 +151,3 @@ celsius.addEventListener("click", showCelsius);
 let formSelector = document.querySelector("#weather-form");
 formSelector.addEventListener("submit", submitCity);
 searchCity("paris");
-weatherForecast();

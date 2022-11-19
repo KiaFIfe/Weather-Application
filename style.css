@@ -101,13 +101,28 @@ li {
   display: inline-block;
   font-weight: 500;
 }
-.day{
-  text-align: center;
+.day {
+  /* text-align: center; */
+  padding-left: 30px;
 }
-.temp1{
+.temp1 {
   font-weight: 600;
-  padding-left: 10px;
+  padding-left: 20px;
+
 }
+.temp2{
+    text-align: center;
 
-
-
+}
+.forecast{
+  width:max-content;
+}
+.temp-border{
+  padding:15px;
+  margin-top: 10px;
+}
+.forecast-temps{
+  width:max-content;
+  text-align: center;
+  
+}
