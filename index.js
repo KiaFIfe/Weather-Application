@@ -89,11 +89,12 @@ function showFahrenheit(event) {
   celsius.classList.remove("active");
   fahrenheit.classList.add("active");
 }
+
 function searchPosition(position) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherCitySearch);
 }
-function findcurrentLocation(event) {
+function findCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
@@ -104,6 +105,7 @@ function displayDay(weekday) {
 
   return days[day];
 }
+
 function weatherForecast(response) {
   let forecastData = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -114,8 +116,8 @@ function weatherForecast(response) {
       `        
      <div class="col-1">
       
-        <div class = "temp-border">
-        <div class="day">${displayDay(forecastDay.time)}</div>
+       <div class="temp-border">
+ <div class="day">${displayDay(forecastDay.time)}</div>
         <img
           src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
             forecastDay.condition.icon
@@ -131,7 +133,7 @@ function weatherForecast(response) {
             Math.round(forecastDay.temperature.minimum) + "°"
           }</span>
         </div>
-     </div>
+       </div>
      </div>
 
         `;
@@ -142,7 +144,7 @@ function weatherForecast(response) {
 
 let apiKey = "5tc304bf7ddcboc14c696c0e7aad7093";
 let currentLink = document.querySelector("#currentLink");
-currentLink.addEventListener("click", findcurrentLocation);
+currentLink.addEventListener("click", findCurrentLocation);
 let celsiusTemp = null;
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheit);
