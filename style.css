@@ -69,10 +69,7 @@ li {
   font-weight: 600;
   padding-left: 30px;
 }
-.active {
-  cursor: default;
-  color: #5a6275;
-}
+
 .search {
   margin: 0 auto;
   width: 400px;
@@ -87,7 +84,7 @@ li {
 .time {
   font-size: 21px;
 }
-.fahrenheit,
+,
 .celsius {
   color: #5a6275;
 }

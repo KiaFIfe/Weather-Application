@@ -46,9 +46,8 @@ function getWeekForecast(coordinates) {
   axios.get(apiUrl).then(weatherForecast);
 }
 function weatherCitySearch(response) {
-  celsiusTemp = response.data.temperature.current;
   let temp = (document.querySelector("#temperature").innerHTML =
-    Math.round(celsiusTemp) + "°");
+    Math.round(response.data.temperature.current) + "°");
   let cityName = (document.querySelector("#place").innerHTML =
     response.data.city);
   let humid = (document.querySelector("#humid").innerHTML =
@@ -74,22 +73,6 @@ function submitCity(event) {
   let searchBar = document.querySelector("#search");
   searchCity(searchBar.value);
 }
-function showCelsius(event) {
-  event.preventDefault();
-  let mainCelsius = document.querySelector("#temperature");
-  mainCelsius.innerHTML = Math.round(celsiusTemp) + "°";
-  fahrenheit.classList.remove("active");
-  celsius.classList.add("active");
-}
-function showFahrenheit(event) {
-  event.preventDefault();
-  let mainFahrenheit = document.querySelector("#temperature");
-  let fahrenheitConversion = (celsiusTemp * 9) / 5 + 32;
-  mainFahrenheit.innerHTML = Math.round(fahrenheitConversion) + "°";
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-}
-
 function searchPosition(position) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherCitySearch);
@@ -146,10 +129,6 @@ let apiKey = "5tc304bf7ddcboc14c696c0e7aad7093";
 let currentLink = document.querySelector("#currentLink");
 currentLink.addEventListener("click", findCurrentLocation);
 let celsiusTemp = null;
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheit);
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", showCelsius);
 let formSelector = document.querySelector("#weather-form");
 formSelector.addEventListener("submit", submitCity);
 searchCity("paris");
