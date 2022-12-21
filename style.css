@@ -36,8 +36,7 @@ li {
 .description {
   text-transform: capitalize;
   line-height: 40px;
-    font-size: 21px;
-
+  font-size: 21px;
 }
 .container {
   margin: 0 auto;
@@ -66,7 +65,7 @@ li {
 }
 .current-link {
   display: block;
-  margin-top: 49px;
+  margin-top: 50px;
   text-decoration: none;
   color: #9d8936;
   font-weight: 600;
@@ -101,7 +100,6 @@ li {
   text-decoration: none;
   display: inline-block;
   font-weight: 500;
-  
 }
 .day {
   padding-left: 30px;
